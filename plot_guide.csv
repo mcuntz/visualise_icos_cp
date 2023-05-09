@@ -1,0 +1,73 @@
+﻿Page,Variable,Title,Depths
+radiation,SW_IN_,Shortwave radiation in (W m-2),
+radiation,SW_OUT_,Shortwave radiation in (W m-2),
+radiation,SW_IN _1_1_1 + SW_OUT_1_1_1,Shortwave radiation in/out (W m-2),
+radiation,SW_IN _1_1_1 + SW_DIF_1_1_1,Shortwave radiation total/diff (W m-2),
+radiation,LW_,Longwave radiation (W m-2),
+radiation,PPFD_IN_,Photosynthetic Photon Flux Density (PPFD) in (umol m-2 s-1),
+radiation,PPFD_OUT_,Photosynthetic Photon Flux Density (PPFD) out (umol m-2 s-1),
+radiation,PPFD_IN_1_1_1 + PPFD_DIF_1_1_1,Photosynthetic Photon Flux Density (PPFD) diffuse (umol m-2 s-1),
+radiation,PPFD_BC_.*_1_1,Below-canopy Photosynthetic Photon Flux Density (PPFD) (umol m-2 s-1),
+air,TA_1_1_1 + TA_2_1_1,Air temperature (°C),
+air,TA_1_.*_1,Air temperature profile (°C),
+air,RH_1_1_1 + RH_2_1_1,Relative humidity (%),
+air,RH_1_.*_1,Relative humidity profile (%),
+air,VPD_1_1_1 + VPD_2_1_1,Vapour pressure deficit (hPa),
+air,VPD_1_.*_1,Vapour pressure deficit profile (hPa),
+air,WS_1_.*_1,Wind speed profile (m s-1),
+air,WD_1_.*_1,Wind direction profile (°),
+air,P_,Precipitation (hPa),
+air,PA_,Atmospheric pressure (hPa),
+air,D_SNOW,Snow depth (m),
+soil,TS_1_.*_1,Soil temperature 1-1 (°C),
+soil,TS_1_.*_2,Soil temperature 1-2 (°C),
+soil,TS_2_.*_1,Soil temperature 2-1 (°C),
+soil,TS_2_.*_2,Soil temperature 2-2 (°C),
+soil,TS_3_.*_1,Soil temperature 3-1 (°C),
+soil,TS_3_.*_2,Soil temperature 3-2 (°C),
+soil,TS_4_.*_1,Soil temperature 4-1 (°C),
+soil,TS_4_.*_2,Soil temperature 4-2 (°C),
+soil,TS_5_.*_1,Soil temperature 5-1 (°C),
+soil,TS_5_*_2,Soil temperature 5-2 (°C),
+soil,TS_6_.*_1,Soil temperature 6-1 (°C),
+soil,TS_6_.*_2,Soil temperature 6-2 (°C),
+soil,TS_7_.*_1,Soil temperature 7-1 (°C),
+soil,TS_7_.*_2,Soil temperature 7-2 (°C),
+soil,SWC_1_,Soil water content 1 (m3 m-3),
+soil,SWC_2_,Soil water content 2 (m3 m-3),
+soil,SWC_3_,Soil water content 3 (m3 m-3),
+soil,SWC_4_,Soil water content 4 (m3 m-3),
+soil,SWC_5_,Soil water content 5 (m3 m-3),
+soil,SWC_6_,Soil water content 6 (m3 m-3),
+soil,SWC_7_,Soil water content 7 (m3 m-3),
+soil,WTD_,Water table depth (m),
+soil2D,TS_1_.*_1,Soil temperature 1-1 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_1_.*_2,Soil temperature 1-2 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_2_.*_1,Soil temperature 2-1 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_2_.*_2,Soil temperature 2-2 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_3_.*_1,Soil temperature 3-1 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_3_.*_2,Soil temperature 3-2 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_4_.*_1,Soil temperature 4-1 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_4_.*_2,Soil temperature 4-2 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_5_.*_1,Soil temperature 5-1 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_5_*_2,Soil temperature 5-2 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_6_.*_1,Soil temperature 6-1 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_6_.*_2,Soil temperature 6-2 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_7_.*_1,Soil temperature 7-1 (°C),0 -5 -10 -20 -40 -80
+soil2D,TS_7_.*_2,Soil temperature 7-2 (°C),0 -5 -10 -20 -40 -80
+soil2D,SWC_1_,Soil water content 1 (m3 m-3),-5 -10 -20 -40 -80
+soil2D,SWC_2_,Soil water content 2 (m3 m-3),-5 -10 -20 -40 -80
+soil2D,SWC_3_,Soil water content 3 (m3 m-3),-5 -10 -20 -40 -80
+soil2D,SWC_4_,Soil water content 4 (m3 m-3),-5 -10 -20 -40 -80
+soil2D,SWC_5_,Soil water content 5 (m3 m-3),-5 -10 -20 -40 -80
+soil2D,SWC_6_,Soil water content 6 (m3 m-3),-5 -10 -20 -40 -80
+soil2D,SWC_7_,Soil water content 7 (m3 m-3),-5 -10 -20 -40 -80
+flux,G_,Soil heat flux (W m-2),
+flux,SG_,Soil heat storage (W m-2),
+flux,LE + LE_UNCLEANED,Latent heat flux (W m-2),
+flux,H + H_UNCLEANED,Sensible heat flux (W m-2),
+flux,FC + NEE + NEE_UNCLEANED + SC,Net carbon flux (umol m-2 s-1),
+flux,TAU,Momentum flux tau (kg m-2 s-1),
+flux,USTAR,Friction velocity u* (m s-1),
+flux,W_SIGMA,Standard deviation of vertical velocity sig_w (m s-1),
+flux,ZL,Stability parameter Z/L,
