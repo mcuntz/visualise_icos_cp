@@ -85,15 +85,37 @@ def read_icos(istation, product='NRT', level=None):
 
     '''
     # all data products
-    if product.lower() == 'nrt':
-        speclabel = ['ETC NRT Fluxes',
-                     'ETC NRT Meteosens']
-    elif product.lower() == 'fluxnet':
+    # From DR-HoH
+    # ETC L2 ARCHIVE
+    # ETC L2 AuxData
+    # Fluxnet Archive Product
+    # ETC L2 Fluxes
+    # ETC L2 Meteosens
+    # ETC L2 Meteo
+    # ETC L2 Fluxnet (half-hourly)
+    # Fluxnet Product
+    # ETC NRT AuxData
+    # ETC NRT Fluxes
+    # ETC NRT Meteosens
+    # ETC NRT Meteo
+    if product.lower() == 'fluxnet':
         speclabel = ['Fluxnet Archive Product',
                      'Fluxnet Product']
+    elif product.lower() == 'l2':
+        speclabel = ['ETC L2 ARCHIVE',
+                     'ETC L2 AuxData',
+                     'ETC L2 Fluxes',
+                     'ETC L2 Meteosens',
+                     'ETC L2 Meteo',
+                     'ETC L2 Fluxnet (half-hourly)']
+    elif product.lower() == 'nrt':
+        speclabel = ['ETC NRT AuxData',
+                     'ETC NRT Fluxes',
+                     'ETC NRT Meteosens',
+                     'ETC NRT Meteo']
     else:
         raise ValueError(f'Product not known: {product}.'
-                         f' Known products: ["NRT", "FLUXNET"].')
+                         f' Known products: ["FLUXNET", "L2", NRT"].')
 
     # Authenticate at ICOS Carbon Portal
     Authentication()
@@ -115,6 +137,7 @@ def read_icos(istation, product='NRT', level=None):
             # load the dataframe with the data into idf
             # one might be asked for its ICOS-CP login and password
             idf = thedobj.data
+            idf.name = ss
             df.append(idf)
         except:
             pass
@@ -327,6 +350,7 @@ if __name__ == '__main__':
     #
 
     days = 0
+    guide = 'plot_guide.csv'
     product = 'NRT'
     istation = ''
     parser = argparse.ArgumentParser(
@@ -336,6 +360,10 @@ if __name__ == '__main__':
                         default=days, dest='days', metavar='number_days',
                         help=('Number of days to visualise. 0 means all'
                               ' available days (default: ' + str(days) + ').'))
+    parser.add_argument('-g', '--guide', action='store', type=str,
+                        default=guide, dest='guide', metavar='csv_file',
+                        help=(f'Plotting guide giving variables in'
+                              f' panels on pages (default: {product}).'))
     parser.add_argument('-p', '--product', action='store', type=str,
                         default=product, dest='product', metavar='product',
                         help=(f'ICOS CP data product: "NRT" or "FLUXNET"'
@@ -344,6 +372,7 @@ if __name__ == '__main__':
                         metavar='args', help='ICOS Ecosystem station name')
     args = parser.parse_args()
     days = args.days
+    guide = args.guide
     product = args.product
     istation = args.cargs
 
@@ -375,10 +404,12 @@ if __name__ == '__main__':
     # Check available variables
     print('Variables available')
     for dd in df:
+        print(dd.name)
         print(list(dd.columns))
+        print(dd['TIMESTAMP'].min(), dd['TIMESTAMP'].max())
 
     # read plot guide
-    df_plot_guide = pd.read_csv('plot_guide.csv', sep=',', header=0)
+    df_plot_guide = pd.read_csv(guide, sep=',', header=0)
 
     #
     # Make html
